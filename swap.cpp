@@ -6,7 +6,6 @@ void swap(int*x, int*y){
 }
 
 void swap(int&x, int&y){
-    if (x != nullptr && y != nullptr)
     int t = x;
     x = y;
     y = x;
