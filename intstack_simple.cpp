@@ -12,8 +12,8 @@ public:
     {
         if (is_full() == false)
         {
-            top++;
             tab[top] = e;
+            top++;
         }
         else
         {
@@ -27,7 +27,7 @@ public:
     {
         if (is_empty() == false)
         {
-            return tab[top];
+            return tab[top - 1];
         }
         else
         {
@@ -41,8 +41,7 @@ public:
         if (is_empty() == false)
         {
             get_top();
-            top--;
-            return tab[top];
+            return tab[--top];
         }
         // cette fonction retourne le dernier entier empilé
         // et supprime cet entier de la pile
@@ -63,10 +62,12 @@ public:
     }
     void print()
     {
-        for (int e : tab)
+        std::cout << '[';
+        for (int i = 0; i < top; i++)
         {
-            std::cout << e << " ";
+            std::cout << tab[i] << " ";
         }
+        std::cout << "]" << std::endl;
 
         // cette fonction affiche la pile, par exemple
         // [1 2 3 [ pour dire que 3 entiers sont dans la pile
