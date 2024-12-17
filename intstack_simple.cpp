@@ -27,7 +27,7 @@ public:
     {
         if (is_empty() == false)
         {
-            return tab[top - 1];
+            return tab[top];
         }
         else
         {
