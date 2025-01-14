@@ -21,6 +21,10 @@ public:
     double area(){
         return(99);
     }
+
+    virtual bool is_at_position(double px, double py){
+        return (true);
+    }
 };
 
 class Circle : public Shape
@@ -76,16 +80,15 @@ public:
 //     }
 //     return false;
 // }
-bool find_at_position(double x, double y, std::vector<Shape *> &shapes) {
+Shape * find_at_position(double x, double y, std::vector<Shape *> &shapes) {
     for (Shape *shape : shapes)
     {
-        // if (shape->is_at_position(x, y)) // vr: il faut définir la fonction
-        if (true)
+        if (shape->is_at_position(x, y)) 
         {
-            return true;
+            return shape;
         }
     }
-    return false;
+    return nullptr;
 }
 
 int main()
